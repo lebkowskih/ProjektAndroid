@@ -8,10 +8,9 @@ import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class ekranstartowy extends AppCompatActivity {
+public class EkranStartowy extends AppCompatActivity {
 
     Animation bottom_animation;
     TextView titleofapp;
@@ -28,7 +27,7 @@ public class ekranstartowy extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(ekranstartowy.this,logowanie.class);
+                Intent intent = new Intent(EkranStartowy.this, Logowanie.class);
                 startActivity(intent);
                 finish();
             }

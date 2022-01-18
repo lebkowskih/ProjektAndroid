@@ -18,41 +18,46 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create table users(id INT primary key,email TEXT,password TEXT)");
+        myDB.execSQL("create table users(login TEXT,password TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int i, int i1) {
-        myDB.execSQL("drop table if exis ts users");
+        myDB.execSQL("drop table if exists users");
     }
 
-    public Boolean insertData(int id,String email, String password){
+    public Boolean insertData(String login, String password){
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id",id);
-        contentValues.put("email",email);
+        contentValues.put("login",login);
         contentValues.put("password",password);
+
+
+
+
         long result = myDB.insert("users",null,contentValues);
         if(result==-1) return false;
         else
             return true;
     }
 
-    public Boolean checkemail(String email){
+    public Boolean checkLogin(String login){
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cursor = myDB.rawQuery("select * from users where email=?",new String[] {email});
+        Cursor cursor = myDB.rawQuery("select * from users where login=?",new String[] {login});
         if(cursor.getCount()>0)
             return true;
         else
             return false;
     }
 
-    public Boolean checkemailpassword(String email,String password){
+    public Boolean checkLoginPassword(String login, String password){
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cursor = myDB.rawQuery("select * from email where username = ? and password = ?",new String[] {email,password});
+        Cursor cursor = myDB.rawQuery("select * from users where login = ? and password = ?",new String[] {login,password});
+        System.out.println("Hej look at me" + cursor.getCount());
         if(cursor.getCount()>0)
             return true;
         else
             return false;
     }
+
 }

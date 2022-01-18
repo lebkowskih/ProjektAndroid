@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjektAndroid">
         <activity
-            android:name=".rejestracja"
+            android:name=".Rejestracja"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".logowanie"
+            android:name=".Logowanie"
             android:exported="true" />
         <activity
-            android:name=".ekranstartowy"
+            android:name=".EkranStartowy"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

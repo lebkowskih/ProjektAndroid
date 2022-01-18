@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">ProjektAndroid</string>
     <string name="getStartedButton">Get started!</string>
-    <string name="titleofapp">Friends</string>
+    <string name="titleofapp">CheckIT</string>
     <string name="mailhint">E-mail</string>
     <string name="passwordhint">Password</string>
     <string name="login">Login</string>
     <string name="register">Jeśli nie posiadasz konta - kliknij tutaj!</string>
+    <string name="zarejestruj">Zarejestruj!</string>
 </resources>
